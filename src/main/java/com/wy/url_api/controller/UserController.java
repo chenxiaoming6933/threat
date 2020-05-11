@@ -20,7 +20,6 @@ public class UserController {
     
     @GetMapping(value = "/show/users.do")
     public Map<Object, Object> findAllUser(@RequestParam(name = "queryType",defaultValue = "all") String type) {
-        System.out.println(type);
         return new HashMap <>();
     }
 }
