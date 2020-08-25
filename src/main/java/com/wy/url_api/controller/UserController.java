@@ -1,12 +1,11 @@
 package com.wy.url_api.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @ClassName 用户相关接口
@@ -17,9 +16,8 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/user/")
 public class UserController {
-    
     @GetMapping(value = "/show/users.do")
-    public Map<Object, Object> findAllUser(@RequestParam(name = "queryType",defaultValue = "all") String type) {
-        return new HashMap <>();
+    public Map<Object, Object> findAllUser(@RequestParam(name = "queryType",defaultValue = "all") String type, @RequestBody JSONObject jsonParam) {
+        return new TreeMap <>();
     }
 }
