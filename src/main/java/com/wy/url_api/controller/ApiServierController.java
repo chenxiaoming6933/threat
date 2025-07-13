@@ -3,12 +3,12 @@ package com.wy.url_api.controller;
 import com.wy.url_api.common.IntelligenceIocJob;
 import com.wy.url_api.common.util.AuthorizedUtil;
 import com.wy.url_api.domain.ApiResponseBean;
+import com.wy.url_api.dto.ApiParamDTO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * Created by M on 2020/2/12.
@@ -26,6 +26,7 @@ public class ApiServierController {
 
     /**
      * 情报IOC结构 查询方法
+     *
      * @param type
      * @param value
      * @param token
@@ -40,7 +41,12 @@ public class ApiServierController {
             return new ApiResponseBean(value, type, null, 500);
         }
 
-        return iocJob.findInfo(type,value);
+        return iocJob.findInfo(type, value);
     }
 
+
+    @PostMapping(value = "/ioc/v2.0")
+    private ApiResponseBean findIntelligenceIoc(@Valid @RequestBody ApiParamDTO paramDTO) {
+        return iocJob.findInfo(paramDTO.getType(), paramDTO.getVaule());
+    }
 }
