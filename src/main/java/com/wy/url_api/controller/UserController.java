@@ -16,6 +16,13 @@ import java.util.TreeMap;
 @RestController
 @RequestMapping(value = "/user/")
 public class UserController {
+
+    /**
+     * 测试master
+     * @param type
+     * @param jsonParam
+     * @return
+     */
     @GetMapping(value = "/show/users.do")
     public Map<Object, Object> findAllUser(@RequestParam(name = "queryType",defaultValue = "all") String type, @RequestBody JSONObject jsonParam) {
         return new TreeMap <>();
