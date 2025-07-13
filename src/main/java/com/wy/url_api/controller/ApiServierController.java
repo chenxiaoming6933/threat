@@ -44,11 +44,6 @@ public class ApiServierController {
         return iocJob.findInfo(type, value);
     }
 
-    /**
-     * 分支代码-测试-增加接口说明
-     * @param paramDTO
-     * @return
-     */
     @PostMapping(value = "/ioc/v2.0")
     private ApiResponseBean findIntelligenceIoc(@Valid @RequestBody ApiParamDTO paramDTO) {
         return iocJob.findInfo(paramDTO.getType(), paramDTO.getVaule());
