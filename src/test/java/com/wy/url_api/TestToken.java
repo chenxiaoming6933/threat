@@ -14,6 +14,9 @@ import java.util.Date;
  */
 public class TestToken {
 
+   /**
+    * test file edit
+    */
     @Test
     public  void  testTokenStr(){
         String  md5Str= MD5.createPassword("intelligence"+"wangyun");
