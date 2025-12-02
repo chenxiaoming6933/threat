@@ -17,11 +17,23 @@ import java.util.List;
 @RequestMapping(value = "/v1/product")
 public class ProductController {
 
+    /**
+     * master 更新注释内容
+     *
+     * @param ids
+     * @return
+     */
     @GetMapping(value = "/{ids}")
     public List <Object> findAllProdcts(@PathVariable(name = "ids") String ids) {
         return new ArrayList <>();
     }
 
+    /**
+     * master 更新注释内容
+     *
+     * @param id
+     * @return
+     */
     @GetMapping(value = "/detail")
     public Object findProductDetail(@RequestParam String id) {
         if (StringUtils.isNoneBlank(id)) {
