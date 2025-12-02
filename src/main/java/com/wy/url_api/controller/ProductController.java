@@ -1,9 +1,7 @@
 package com.wy.url_api.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,5 +20,13 @@ public class ProductController {
     @GetMapping(value = "/{ids}")
     public List <Object> findAllProdcts(@PathVariable(name = "ids") String ids) {
         return new ArrayList <>();
+    }
+
+    @PostMapping
+    public Object findProductDetail(@RequestParam String id) {
+        if (StringUtils.isNoneBlank(id)) {
+            return new Object();
+        }
+        return null;
     }
 }
