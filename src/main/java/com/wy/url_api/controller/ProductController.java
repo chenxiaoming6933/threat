@@ -22,7 +22,7 @@ public class ProductController {
         return new ArrayList <>();
     }
 
-    @PostMapping
+    @GetMapping(value = "/detail")
     public Object findProductDetail(@RequestParam String id) {
         if (StringUtils.isNoneBlank(id)) {
             return new Object();
